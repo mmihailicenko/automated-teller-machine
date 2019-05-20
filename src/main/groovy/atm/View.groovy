@@ -2,34 +2,33 @@ package atm
 
 class View {
 
-
-    void showStartup() {
-
-        Atm atm = new Atm()
-        println("Enter your ID")
-        String id = System.in.newReader().readLine()
-        atm.authorize(id)
+    static void showMainMenu() {
+        println("---------------------------------------------------------")
+        println("-----enter 1 to check bank account status----------------")
+        println("-----enter 2 to withdraw cash----------------------------")
+        println("---------------------------------------------------------")
+        println("---------------------------------------------------------")
     }
 
-    void mainMenu() {
-        println("you are in the main menu")
-
+    static void showStartup() {
+        println("---------------------------------------------------------")
+        println("---------------------enter your ID-----------------------")
+        println("---------------------------------------------------------")
     }
 
-    void showBankAccountStatus() {
-
+    static void showBankAccountStatus() {
+        println("---------------------------------------------------------")
+        println("---------------------------------------------------------")
     }
 
-    void showWithdrawalStaus() {
-
+    static void showWithdrawalStaus() {
+        println("---------------------------------------------------------")
+        println("---------------------------------------------------------")
     }
 
-    void showError() {
-
+    static void showError() {
+        println("---------------------------------------------------------")
+        println("-----something went wrong, please contact your agent-----")
+        println("---------------------------------------------------------")
     }
-
-    void login(int id) {
-        atm.authorize(id)
-    }
-
 }

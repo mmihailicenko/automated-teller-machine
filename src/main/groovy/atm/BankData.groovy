@@ -1,17 +1,21 @@
 package atm
 
-import com.google.gson.JsonParser
 import groovy.json.JsonSlurper
 
 class BankData {
+    def jsonSlurper = new JsonSlurper()
+    def PATH_TO_DATA = "src/main/groovy/atm/data/bank-clientele-data.json"
+    def data = jsonSlurper.parse(new File(PATH_TO_DATA))
 
-    void getData(String arg) {
-        def jsonSlurper = new JsonSlurper()
-        data = jsonSlurper.parse(new File("C:/projects/automated-teller-machine/src/main/groovy/atm/data/bank-clientele-data.json"))
-
+    String getData(String id) {
+        data."$id"
     }
 
-    void setData() {
+    String getParam(String id, String key) {
+        data."$id"."$key"
+    }
+
+    void setData(String id, String key, String value) {
 
     }
 }
