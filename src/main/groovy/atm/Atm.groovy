@@ -5,15 +5,15 @@ class Atm {
     View view = new View()
     BankData bankData = new BankData()
 
-    void authorize() {
-        if(checkClientData()){
+    void authorize(String id) {
+        if(checkClientData(id)){
             view.mainMenu()
         } else {
             view.showError()
         }
     }
 
-    Boolean checkClientData(int id) {
+    Boolean checkClientData(String id) {
         bankData.getData(id)
         if (id) {
             String status = bankData.getData("STATUS")
@@ -28,7 +28,7 @@ class Atm {
 
     }
 
-    void withdrawCash() {
+    void withdrawCash(int amount) {
 
     }
 }
