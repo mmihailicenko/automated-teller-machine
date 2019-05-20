@@ -7,7 +7,7 @@ class BankData {
     def PATH_TO_DATA = "src/main/groovy/atm/data/bank-clientele-data.json"
     def data = jsonSlurper.parse(new File(PATH_TO_DATA))
 
-    String getData(String id) {
+    Map getData(String id) {
         data."$id"
     }
 

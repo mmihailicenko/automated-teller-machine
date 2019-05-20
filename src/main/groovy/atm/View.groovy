@@ -1,8 +1,7 @@
 package atm
 
 class View {
-
-    static void showMainMenu() {
+    static void mainMenu() {
         println("---------------------------------------------------------")
         println("-----enter 1 to check bank account status----------------")
         println("-----enter 2 to withdraw cash----------------------------")
@@ -10,25 +9,30 @@ class View {
         println("---------------------------------------------------------")
     }
 
-    static void showStartup() {
+    static void welcomeMessage() {
         println("---------------------------------------------------------")
         println("---------------------enter your ID-----------------------")
         println("---------------------------------------------------------")
     }
 
-    static void showBankAccountStatus() {
+    static void bankAccountStatus(Map customerData) {
+        println("---------------------------------------------------------")
+        println("-------------$customerData.name--------------------------")
+        println("-------------$customerData.bankAccountNumber-------------")
+        println("-------------$customerData.balance-----------------------")
+        println("-------------$customerData.status------------------------")
+        println("---------------------------------------------------------")
+
+    }
+
+    static void withdrawalStatus() {
         println("---------------------------------------------------------")
         println("---------------------------------------------------------")
     }
 
-    static void showWithdrawalStaus() {
+    static void errorMessageInvalidClientID() {
         println("---------------------------------------------------------")
-        println("---------------------------------------------------------")
-    }
-
-    static void showError() {
-        println("---------------------------------------------------------")
-        println("-----something went wrong, please contact your agent-----")
+        println("-----Your ID is not valid-----")
         println("---------------------------------------------------------")
     }
 }

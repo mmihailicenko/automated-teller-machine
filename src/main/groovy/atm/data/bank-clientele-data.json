@@ -1,19 +1,19 @@
 {
   "431": {
     "name" : "active-client-1",
-    "bank account number" : "14214",
+    "bankAccountNumber" : "14214",
     "balance" : 400.01,
     "status" : "ACTIVE"
   },
   "432": {
     "name" : "inactive-client-1",
-    "bank account number" : "9774",
+    "bankAccountNumber" : "9774",
     "balance" : 50.01,
     "status" : "INACTIVE"
   },
   "433": {
     "name" : "banned-client-1",
-    "bank account number" : "0101",
+    "bankAccountNumber" : "0101",
     "balance" : 0.01,
     "status" : "BLACKLISTED",
   }
