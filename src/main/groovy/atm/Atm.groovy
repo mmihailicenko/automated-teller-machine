@@ -20,7 +20,17 @@ class Atm {
         view.bankAccountStatus(bankData.getData(id))
     }
 
-    void withdrawCash(int amount) {
+    void withdrawCash(String id) {
+        view.withdrawalMenu()
+        def withdrawAmount = System.in.newReader().readLine()
+        def customerBalnce = bankData.getParam(id, 'balance')
 
+        if (withdrawAmount <= bankData.getParam(id, 'balance')) {
+            new BankData().setData(id, "balance", (customerBalnce.toBigDecimal() - withdrawAmount.toBigDecimal()).toString())
+            view.withdrawSuccessful()
+            view.withdrawalStatus(bankData.getData(id), withdrawAmount)
+        } else {
+            view.withdrawErrorNotEnoughMoney()
+        }
     }
 }

@@ -25,9 +25,27 @@ class View {
 
     }
 
-    static void withdrawalStatus() {
+    static void withdrawalStatus(Map customerData, String withdrawAmount) {
         println("---------------------------------------------------------")
+        println("-------------$customerData.bankAccountNumber-------------")
+        println("-------------$customerData.balance-----------------------")
+        println("-------------$withdrawAmount------------------------")
         println("---------------------------------------------------------")
+    }
+
+    static void withdrawalMenu() {
+        println("---------------------------------------------------------")
+        println("-------------Enter amount you want to withdraw--------------------------------")
+    }
+
+    static void withdrawSuccessful() {
+        println("---------------------------------------------------------")
+        println("-------------Withdraw was successful--------------------------------")
+    }
+
+    static void withdrawErrorNotEnoughMoney() {
+        println("---------------------------------------------------------")
+        println("-------------Not enough money on your bank account--------------------------------")
     }
 
     static void errorMessageInvalidClientID() {

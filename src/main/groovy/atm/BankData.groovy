@@ -1,6 +1,7 @@
 package atm
 
 import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
 
 class BankData {
     def jsonSlurper = new JsonSlurper()
@@ -16,6 +17,8 @@ class BankData {
     }
 
     void setData(String id, String key, String value) {
-
+        data."$id"."$key" = value
+        def json = JsonOutput.toJson(data)
+        new File(PATH_TO_DATA).write(json)
     }
 }

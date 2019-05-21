@@ -1,12 +1,11 @@
 package atm
 
-class AtmSession {
+class Main {
 
     static void main(String[] Args) {
         View view = new View()
         Atm atm = new Atm()
         boolean session
-
         while (true) {
             session = false
             view.welcomeMessage()
@@ -27,7 +26,7 @@ class AtmSession {
                         atm.showStatus(customerId)
                         break
                     case '2':
-                        view.withdrawalStatus()
+                        atm.withdrawCash(customerId)
                         break
                     case "exit":
                         session = false
