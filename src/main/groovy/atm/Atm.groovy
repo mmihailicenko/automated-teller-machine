@@ -23,12 +23,15 @@ class Atm {
     void withdrawCash(String id) {
         view.withdrawalMenu()
         def withdrawAmount = System.in.newReader().readLine()
-        def customerBalnce = bankData.getParam(id, 'balance')
+        def customerBalance = bankData.getParam(id, 'balance')
+        withdrawAmount = withdrawAmount.toBigDecimal()
+        customerBalance = customerBalance.toBigDecimal()
 
-        if (withdrawAmount <= bankData.getParam(id, 'balance')) {
-            new BankData().setData(id, "balance", (customerBalnce.toBigDecimal() - withdrawAmount.toBigDecimal()).toString())
+        if (withdrawAmount <= customerBalance) {
+            String newBalance = (customerBalance - withdrawAmount).toString()
+            new BankData().setData(id, "balance", newBalance)
             view.withdrawSuccessful()
-            view.withdrawalStatus(bankData.getData(id), withdrawAmount)
+            view.withdrawalStatus(bankData.getData(id), withdrawAmount.toString())
         } else {
             view.withdrawErrorNotEnoughMoney()
         }
