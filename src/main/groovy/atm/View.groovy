@@ -27,7 +27,7 @@ class View {
         println("---------------------------------------------------------")
         println("| Bank Account Number: $customerData.bankAccountNumber")
         println("| Bank Account Balnce: $customerData.balance")
-        println("| Withrawed Amount: $withdrawAmount")
+        println("| withdrawn Amount: $withdrawAmount")
     }
 
     static void withdrawalMenu() {
