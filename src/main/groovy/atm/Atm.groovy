@@ -9,9 +9,11 @@ class Atm {
             if (bankData.getParam(id, "status").toString() == "ACTIVE") {
                 true
             } else {
+                view.errorMessageBankAccountStatusIsNotActive()
                 false
             }
         } else {
+            view.errorMessageInvalidClientID()
             false
         }
     }

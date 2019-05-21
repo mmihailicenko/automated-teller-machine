@@ -13,8 +13,6 @@ class Main {
 
             if (atm.authorize(customerId)) {
                 session = true
-            } else {
-                view.errorMessageInvalidClientID()
             }
 
             while (session) {
@@ -32,8 +30,7 @@ class Main {
                         session = false
                         break
                     default :
-                        println("**ERROR**")
-                        println("Wrong response, please choose one of the options or type \"3\" to log out")
+                        view.errorMessageInvalidOption()
                         break
                 }
             }

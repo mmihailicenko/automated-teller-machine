@@ -12,7 +12,7 @@ class View {
     static void welcomeMessage() {
         println("---------------------------------------------------------")
         println("enter your ID")
-        print("ID: ")
+        print(":")
     }
 
     static void bankAccountStatus(Map customerData) {
@@ -33,7 +33,7 @@ class View {
     static void withdrawalMenu() {
         println("---------------------------------------------------------")
         println("Enter amount you want to withdraw")
-        print("Amount: ")
+        print(":")
     }
 
     static void withdrawSuccessful() {
@@ -44,6 +44,16 @@ class View {
     static void withdrawErrorNotEnoughMoney() {
         println("**ERROR**")
         println("Not enough money on your bank account")
+    }
+
+    static void errorMessageInvalidOption() {
+        println("**ERROR**")
+        println("Wrong response, please choose one of the options or type \"3\" to log out")
+    }
+
+    static void errorMessageBankAccountStatusIsNotActive(){
+        println("**ERROR**")
+        println("Your Bank Account Is Not Active")
     }
 
     static void errorMessageInvalidClientID() {
