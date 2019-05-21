@@ -28,11 +28,12 @@ class Main {
                     case '2':
                         atm.withdrawCash(customerId)
                         break
-                    case "exit":
+                    case '3':
                         session = false
                         break
                     default :
-                        println("Wrong response, please choose one of the options or type \"exit\" to log out")
+                        println("**ERROR**")
+                        println("Wrong response, please choose one of the options or type \"3\" to log out")
                         break
                 }
             }

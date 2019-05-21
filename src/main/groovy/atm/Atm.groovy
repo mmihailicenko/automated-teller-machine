@@ -5,7 +5,7 @@ class Atm {
     View view = new View()
 
     Boolean authorize(String id) {
-        if (bankData.getData(id).toString()) {
+        if (bankData.checkKey(id)) {
             if (bankData.getParam(id, "status").toString() == "ACTIVE") {
                 true
             } else {

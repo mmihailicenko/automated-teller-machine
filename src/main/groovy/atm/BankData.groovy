@@ -23,4 +23,9 @@ class BankData {
         def json = JsonOutput.toJson(data)
         new File(PATH_TO_DATA).write(json)
     }
+
+    Boolean checkKey(String key) {
+        def data = jsonSlurper.parse(new File(PATH_TO_DATA))
+        data.containsKey(key)
+    }
 }
