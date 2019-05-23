@@ -1,19 +1,30 @@
 package atm
 
+import atm.views.ApplicationWindow
+import atm.views.CustomerMenuScreen
+import atm.views.MainScreen
+import core.views.WindowModule
+import com.google.inject.Guice
+
 class Atm {
+
     BankData bankData = new BankData()
-    View view = new View()
+    CustomerMenuScreen customerMenuScreen = new CustomerMenuScreen()
+    MainScreen mainScreen = new MainScreen()
+
+    def injector = Guice.createInjector(new WindowModule())
+    def applicationWindow = injector.getInstance(ApplicationWindow)
 
     Boolean authorize(String id) {
         if (bankData.checkKey(id)) {
             if (bankData.getParam(id, "status").toString() == "ACTIVE") {
+                applicationWindow.hideScreen(mainScreen)
+                applicationWindow.showScreen(customerMenuScreen)
                 true
             } else {
-                view.errorMessageBankAccountStatusIsNotActive()
                 false
             }
         } else {
-            view.errorMessageInvalidClientID()
             false
         }
     }
